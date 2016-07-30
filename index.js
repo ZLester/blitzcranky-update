@@ -1,8 +1,7 @@
-const app = require('express')();
+const app = require('./server');
+const logger = require('winston');
 const { PORT } = require('./config');
 
-require('./jobs');
-
 app.listen(PORT, () => {
-  console.log(`Blitzcranky-worker listening on port ${PORT}`);
+  logger.info(`Blitzcranky-worker listening on port ${PORT}`);
 });
