@@ -25,8 +25,8 @@ const updateChampionsService = () => {
 
 exports.updateServices = () => {
   console.log('Instructing Services to Update.');
-  updateChampionService()
-    .then(() => updateStaticServer)
+  updateChampionsService()
+    .then(() => updateStaticServer())
     .then(() => console.log('All services Updated Successfully'))
     .catch(() => console.log('Error Updating Services.'));
 };
