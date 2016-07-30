@@ -2,12 +2,12 @@ const CronJob = require('cron').CronJob;
 const { updateServices } = require('./workerUtils');
 
 const updateServicesDaily = new CronJob({
-  cronTime: '00 00 09 * * 0-6',
+  cronTime: '59 * * * * 0-6',
   onTick: () => {
     updateServices();
   },
   start: true,
-  timeZone: 'America/Los_Angeles'
+  timeZone: 'America/Los_Angeles',
 });
 
 module.exports = updateServicesDaily;
