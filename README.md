@@ -1,11 +1,14 @@
 # Blitzcranky Update Service/Job Schedule
-### Visualizer for the latest League of Legends weekly free champion rotation
+Visualizer for the latest League of Legends weekly free champion rotation
 
 ## Components
-### Blitzcranky is made up of three separate components:
 - [Static Server Cluster/React Client](https://github.com/zlester/blitzcranky)
 - [Champion Service](https://github.com/zlester/blitzcranky-champion)
 - [Update Service/Job Scheduler](https://github.com/zlester/blitzcranky-worker)
+
+## Usage
+`npm install`
+`npm start`
 
 ## Stack
 - React 15.x
