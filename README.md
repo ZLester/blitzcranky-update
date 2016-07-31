@@ -25,3 +25,6 @@ Visualizer for the latest League of Legends weekly free champion rotation
 ![blitzcranky architecture diagram](http://i.imgur.com/OQXnuJZ.png "Blitzcranky Architecture Diagram")
 
 > Note: To run the Champion Service locally you need to obtain a key from the [Riot Developer's API](https://developer.riotgames.com/) first. The Champion Service expects your API key to be found as the environment variable `LEAGUE_API_KEY`
+
+## Demo
+A deployed version of the app can be found [here](https://blitzcranky.herokuapp.com)
