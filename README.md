@@ -1,4 +1,4 @@
-# Blitzcranky Worker
+# Blitzcranky Update Service/Job Schedule
 ### Visualizer for the latest League of Legends weekly free champion rotation
 
 ## Components
