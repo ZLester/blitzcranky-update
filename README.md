@@ -6,17 +6,20 @@ Visualizer for the latest League of Legends weekly free champion rotation
 - [Champion Service](https://github.com/zlester/blitzcranky-champion)
 - [Update Service/Job Scheduler](https://github.com/zlester/blitzcranky-worker)
 
-## Usage
-`npm install`
-`npm start`
-
-## Stack
+## Requirements
 - React 15.x
 - Node 6.2.x
 - Express 4.x
 - Mongoose 4.x
 - Redis 2.6.x
 - Cron 1.x
+
+## Usage
+- Clone down each Blitzcranky component via the links above
+- `npm install` in each repo
+- Start MongoDB locally via `mongod`
+- Start Redis locally via `redis-server`
+- `npm start` in each repo
 
 ## Architecture
 ![blitzcranky architecture diagram](http://i.imgur.com/OQXnuJZ.png "Blitzcranky Architecture Diagram")
