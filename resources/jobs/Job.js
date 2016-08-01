@@ -59,4 +59,4 @@ class Job {
   }
 }
 
-module.exports = job;
+module.exports = new Job();
