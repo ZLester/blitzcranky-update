@@ -1,12 +1,11 @@
 const chai = require('chai');
+const { expect } = chai;
 const chaiHttp = require('chai-http');
-const expect = require('chai').expect;
 const app = require('../server.js');
 
 chai.use(chaiHttp);
 
 describe('Server Functionality', () => {
-
   it('should exist', () => {
     expect(app).to.exist;
   });

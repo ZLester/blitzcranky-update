@@ -1,5 +1,5 @@
 const app = require('express')();
 
-require('./scheduler');
+require('./resources/scheduler');
 
 module.exports = app;
