@@ -1,13 +1,7 @@
 const jobRouter = require('express').Router();
+const jobController = require('./jobController');
 
-const placeholder = (req, res) => {
-  res.json({ message: 'placeholder' });
-};
-
-jobRouter.route('/')
-  .post(placeholder)
-  .get(placeholder)
-  .put(placeholder)
-  .delete(placeholder);
+jobRouter.route('/status')
+  .get(jobController.getStatus);
 
 module.exports = jobRouter;
