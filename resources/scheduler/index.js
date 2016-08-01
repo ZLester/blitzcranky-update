@@ -3,7 +3,7 @@ const { updateServices, getLastUpdateStatus } = require('../jobs/Job');
 
 // Pings worker every 10 minutes to prevent Heroku from idling the dyno
 exports.pingWorkerEveryTenMinutes = new CronJob({
-  cronTime: '00 */2 * * * 0-6',
+  cronTime: '00 */10 * * * 0-6',
   onTick: () => {
     getLastUpdateStatus();
   },
