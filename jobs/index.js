@@ -1,12 +1,13 @@
 const Promise = require('bluebird');
 const request = Promise.promisifyAll(require('request'));
 const logger = require('winston');
+const { CHAMPION_URI_STATIC, CHAMPION_URI_CHAMPION } = require('../config');
 
 const updateStaticServer = () => {
-  logger.info('Instructing Static Server to Update...');
-  return request.putAsync('https://blitzcranky.herokuapp.com/api/champions')
+  logger.info(`Instructing Static Server to Update at ${new Date()}`);
+  return request.putAsync(CHAMPION_URI_STATIC)
     .then(() => {
-      logger.info('Static Server Updated Successfully');
+      logger.info(`Static Server Updated Successfully on ${new Date()}`);
     })
     .catch(err => {
       throw new Error(`Updating Static Server Failed: ${err.message}`);
@@ -14,10 +15,10 @@ const updateStaticServer = () => {
 };
 
 const updateChampionsService = () => {
-  logger.info('Instructing Champion Service to Update...');
-  return request.putAsync('https://blitzcranky-champion.herokuapp.com/api/champions')
+  logger.info(`Instructing Champion Service to Update at ${new Date()}`);
+  return request.putAsync(CHAMPION_URI_CHAMPION)
     .then(() => {
-      logger.info('Champions Service Updated Successfully');
+      logger.info(`Champion Server Updated Successfully on ${new Date()}`);
     })
     .catch(err => {
       throw new Error(`Updating Champion Service Failed: ${err.message}`);
@@ -25,9 +26,9 @@ const updateChampionsService = () => {
 };
 
 exports.updateServices = () => {
-  logger.info('Instructing Services to Update...');
-  updateChampionsService()
+  logger.info(`Instructing Services to Update at ${new Date()}`);
+  return updateChampionsService()
     .then(() => updateStaticServer())
-    .then(() => logger.info('All services Updated Successfully'))
+    .then(() => logger.info(`All services Updated Successfully at ${new Date()}`))
     .catch(err => logger.error(`Error Updating Services: ${err.message}`));
 };
