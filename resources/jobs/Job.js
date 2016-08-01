@@ -24,7 +24,7 @@ class Job {
   updateStaticServer() {
     logger.info(`Instructing Static Server to Update at ${new Date()}`);
     return request.putAsync(CHAMPION_URI_STATIC)
-      .then(() => logger.info(`Static Server Updated Successfully on ${new Date()}`))
+      .then(() => `Static Server Updated Successfully on ${new Date()}`)
       .catch(err => {
         throw new Error(`Updating Static Server Failed: ${err.message}`);
       });
@@ -32,7 +32,7 @@ class Job {
   updateChampionsService() {
     logger.info(`Instructing Champion Service to Update at ${new Date()}`);
     return request.putAsync(CHAMPION_URI_CHAMPION)
-      .then(() => logger.info(`Champion Server Updated Successfully on ${new Date()}`))
+      .then(() => `Champion Server Updated Successfully on ${new Date()}`)
       .catch(err => {
         throw new Error(`Updating Champion Service Failed: ${err.message}`);
       });
@@ -59,6 +59,4 @@ class Job {
   }
 }
 
-const job = new Job();
-job.updateServices();
 module.exports = job;
